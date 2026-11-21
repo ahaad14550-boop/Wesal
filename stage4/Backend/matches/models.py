@@ -131,6 +131,7 @@ class VenueRequest(models.Model):
     date = models.DateField(db_index=True)
     time = models.TimeField()
     total_cost = models.DecimalField(max_digits=8, decimal_places=2)
+    max_players = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     contact_number = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
     
