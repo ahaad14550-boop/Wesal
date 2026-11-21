@@ -127,6 +127,7 @@ class VenueRequest(models.Model):
     facility_name = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     google_maps_link = models.URLField(max_length=500)
+    sport = models.ForeignKey(Sport, on_delete=models.PROTECT, related_name='matches')
     date = models.DateField(db_index=True)
     time = models.TimeField()
     total_cost = models.DecimalField(max_digits=8, decimal_places=2)
